@@ -97,8 +97,8 @@ class _InputPageState extends State<InputPage> {
                     ),
                     child: Slider(
                       value: height.toDouble(),
-                      min: 120.0,
-                      max: 220.0,
+                      min: kMinHeight,
+                      max: kMaxHeight,
                       onChanged: (double newValue) {
                         setState(() {
                           height = newValue.round();
@@ -190,8 +190,14 @@ class _InputPageState extends State<InputPage> {
               CalculatorBrain calc =
                   CalculatorBrain(height: height, weight: weight);
 
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => ResultsPage()));
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => ResultsPage(
+                            bmiResult: calc.calculateBMI(),
+                            resultText: calc.getResult(),
+                            interpretation: calc.getInterpretation(),
+                          )));
             },
           ),
         ],

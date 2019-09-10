@@ -19,3 +19,6 @@ const kResultTextStyle = TextStyle(
 
 const kBMITextStyle = TextStyle(fontSize: 100, fontWeight: FontWeight.bold);
 const kBodyTextStyle = TextStyle(fontSize: 22);
+
+const kMinHeight = 140.0;
+const kMaxHeight = 210.0;
